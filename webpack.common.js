@@ -1,16 +1,19 @@
 /*
-	./webpack.config.js
+	./webpack.common.js
 */
 
 const path = require('path'); // path utility
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 // init HTML Webpack Plugin
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
-	template: './public/index.html', // archivo de nuestra vista
+	template: './src/template.html', // archivo de nuestra vista
 	inject: 'body' // donde insertaremos nuestro script
 })
+// init Clean Webpack Plugin
+const CleanWebpackPluginConfig = new CleanWebpackPlugin(['public']);
 
 const config = {
 	entry: './src/index.js', // archivo js que codearemos
@@ -35,7 +38,7 @@ const config = {
 	resolve: {
 		extensions: ['.js', '.jsx']
 	},
-	plugins: [HtmlWebpackPluginConfig] // configuración de nuestra vista
+	plugins: [HtmlWebpackPluginConfig, CleanWebpackPluginConfig] // configuración de nuestra vista
 }
 
 module.exports = config; //exportamos a webpack nuestra configuración
