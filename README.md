@@ -1,5 +1,4 @@
-# Configurar Entorno de Desarrollo: React + Babel + Webpack
-Tutorial de Configuración de React, Babel, WebPack.
+# Tuturial: Sitio de Fútbol. Webpack + Babel + React.
 
 ### Encuentra los tutoriales en cada branch de este repo.
 
